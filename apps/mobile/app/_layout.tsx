@@ -1,24 +1,26 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+// apps/mobile/app/_layout.tsx
+import { Tabs } from 'expo-router';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
+export default function Layout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Tabs screenOptions={{ headerShown: false }}>
+      {/* 首页 Tab */}
+      <Tabs.Screen
+        name="index" // 对应 index.tsx
+        options={{
+          title: '首页',
+          tabBarIcon: ({ color }) => <Text style={{color}}>🏠</Text>, // 暂时用Emoji代替图标
+        }}
+      />
+
+      {/* 设置页 Tab */}
+      <Tabs.Screen
+        name="settings" // 对应 settings.tsx
+        options={{
+          title: '设置',
+          tabBarIcon: ({ color }) => <Text style={{color}}>⚙️</Text>,
+        }}
+      />
+    </Tabs>
   );
 }

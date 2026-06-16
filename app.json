@@ -1,0 +1,11 @@
+{
+  "android": {
+    "package": "com.anonymous.mindwaveapp"
+  },
+  "plugins": [
+    "expo-status-bar"
+  ],
+  "ios": {
+    "bundleIdentifier": "com.anonymous.mindwaveapp"
+  }
+}
