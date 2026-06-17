@@ -12,6 +12,7 @@ const COLORS = {
 };
 
 const TAB_ANIMATION_MS = 200;
+const VISIBLE_TAB_NAMES = new Set(['index', 'soundscape', 'focus', 'profile']);
 
 type TabRoute = BottomTabBarProps['state']['routes'][number];
 type TabDescriptor = BottomTabBarProps['descriptors'][string];
@@ -99,7 +100,7 @@ function CapsuleTabItem({ descriptor, focused, onLongPress, onPress, route }: Ca
 
 export function CapsuleTabBar({ descriptors, navigation, state }: BottomTabBarProps) {
   const insets = useSafeAreaInsets();
-  const visibleRoutes = state.routes.filter((route) => descriptors[route.key]?.options.href !== null);
+  const visibleRoutes = state.routes.filter((route) => VISIBLE_TAB_NAMES.has(route.name));
   const bottomOffset = Math.max(insets.bottom, 10) + 12;
 
   return (
