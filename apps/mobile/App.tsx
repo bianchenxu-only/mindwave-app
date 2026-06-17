@@ -1,18 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
-import { styled } from 'nativewind'; // <--- 引入 styled
-
-// 使用 styled 包装基础组件，让它们支持 className
-const StyledView = styled(View);
-const StyledText = styled(Text);
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <StyledView className="flex-1 items-center justify-center bg-white">
-      <StyledText className="text-3xl font-bold text-blue-500">
-        MindWave App
-      </StyledText>
+    <View style={styles.container}>
+      <Text style={styles.title}>MindWave App</Text>
       <StatusBar style="auto" />
-    </StyledView>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F4F0EA',
+  },
+  title: {
+    color: '#0F6E56',
+    fontSize: 30,
+    fontWeight: '600',
+  },
+});
