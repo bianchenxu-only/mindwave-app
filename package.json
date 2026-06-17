@@ -19,6 +19,7 @@
     "node": ">=18"
   },
   "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
     "expo": "^56.0.11",
     "expo-dev-client": "~56.0.20",
     "expo-status-bar": "~56.0.4",
