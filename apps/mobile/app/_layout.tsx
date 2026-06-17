@@ -49,7 +49,6 @@ export default function Layout() {
       />
       <Tabs.Screen name="settings" options={{ href: null }} />
       <Tabs.Screen name="modal" options={{ href: null }} />
-      <Tabs.Screen name="(tabs)" options={{ href: null }} />
     </Tabs>
   );
 }
