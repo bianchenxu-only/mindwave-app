@@ -27,7 +27,7 @@ const achievements = [
   { name: '七日之约', icon: 'moon-outline', active: true },
   { name: '三周之约', icon: 'trail-sign-outline', active: false },
   { name: '声音探索家', icon: 'ear-outline', active: false },
-];
+] satisfies { name: string; icon: IconName; active: boolean }[];
 
 const libraryItems = [
   { title: '我的声景', subtitle: '12 个收藏 · 2 个混音方案', icon: 'musical-notes-outline' },
