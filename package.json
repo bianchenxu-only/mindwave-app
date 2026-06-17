@@ -43,5 +43,10 @@
     "react-native-web": "^0.21.2",
     "react-native-worklets": "0.8.3"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "pnpm": {
+    "patchedDependencies": {
+      "react-native@0.85.3": "patches/react-native@0.85.3.patch"
+    }
+  }
 }
