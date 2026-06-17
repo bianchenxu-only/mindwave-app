@@ -3,7 +3,8 @@
     "package": "com.anonymous.mindwaveapp"
   },
   "plugins": [
-    "expo-status-bar"
+    "expo-status-bar",
+    "expo-font"
   ],
   "ios": {
     "bundleIdentifier": "com.anonymous.mindwaveapp"
