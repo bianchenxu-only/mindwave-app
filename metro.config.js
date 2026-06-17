@@ -4,22 +4,29 @@ const { getDefaultConfig } = require('expo/metro-config');
 const workspaceRoot = __dirname;
 const mobileRoot = path.join(workspaceRoot, 'apps/mobile');
 const projectRoot = process.cwd() === mobileRoot ? mobileRoot : workspaceRoot;
+const mobileAliasPrefix = '@/';
 
 const config = getDefaultConfig(projectRoot);
+const resolveRequest = config.resolver.resolveRequest;
 
-if (projectRoot === workspaceRoot) {
-  const rootOrigin = path.join(workspaceRoot, 'App.tsx');
-  const resolveRequest = config.resolver.resolveRequest;
+const rootOrigin = path.join(workspaceRoot, 'App.tsx');
 
-  config.resolver.resolveRequest = (context, moduleName, platform) => {
-    const rootContext = shouldResolveFromRoot(moduleName)
+config.resolver.resolveRequest = (context, moduleName, platform) => {
+  const resolvedModuleName = resolveMobileAlias(moduleName);
+  const rootContext =
+    projectRoot === workspaceRoot && shouldResolveFromRoot(resolvedModuleName)
       ? { ...context, originModulePath: rootOrigin }
       : context;
 
-    return resolveRequest
-      ? resolveRequest(rootContext, moduleName, platform)
-      : context.resolveRequest(rootContext, moduleName, platform);
-  };
+  return resolveRequest
+    ? resolveRequest(rootContext, resolvedModuleName, platform)
+    : context.resolveRequest(rootContext, resolvedModuleName, platform);
+};
+
+function resolveMobileAlias(moduleName) {
+  return moduleName.startsWith(mobileAliasPrefix)
+    ? path.join(mobileRoot, moduleName.slice(mobileAliasPrefix.length))
+    : moduleName;
 }
 
 function shouldResolveFromRoot(moduleName) {
