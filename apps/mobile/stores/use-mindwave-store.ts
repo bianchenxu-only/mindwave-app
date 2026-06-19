@@ -79,8 +79,8 @@ export const useMindWaveStore = create<MindWaveState>((set, get) => ({
   focusModeId: defaultMode.id,
   homeHabits: initialHomeHabits,
   isFocusRunning: false,
-  isPlaying: true,
-  playerTimerLabel: "定时 30 分钟后淡出",
+  isPlaying: false,
+  playerTimerLabel: "选择声景后开始播放",
   remainingFocusSeconds: defaultMode.seconds,
   settings: {
     haptics: true,

@@ -3,6 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 import type { ComponentProps } from "react";
 
 import { CapsuleTabBar } from "@/components/capsule-tab-bar";
+import { useSoundscapePlayer } from "@/hooks/use-soundscape-player";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -27,6 +28,8 @@ function tabIcon(outline: IconName, filled: IconName) {
 }
 
 export default function Layout() {
+  useSoundscapePlayer();
+
   return (
     <Tabs
       tabBar={(props) => <CapsuleTabBar {...props} />}

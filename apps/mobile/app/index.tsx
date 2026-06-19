@@ -89,6 +89,10 @@ function getRecommendationTrack(name: string, index: number): SoundscapeItem {
       duration: index === 0 ? "18 分钟" : "30 分钟",
       paid: false,
       tone: index === 1 ? COLORS.orange : COLORS.moss,
+      audioUrl:
+        index === 0
+          ? "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3"
+          : "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
       description: "根据当前时段自动挑选的轻量声景。",
     }
   );

@@ -23,6 +23,7 @@ export type SoundscapeCategory =
   | "睡眠";
 
 export type SoundscapeItem = {
+  audioUrl: string;
   category: SoundscapeCategory;
   description: string;
   duration: string;
@@ -42,6 +43,7 @@ export const SOUNDSCAPES: SoundscapeItem[] = [
     duration: "18 分钟",
     paid: false,
     tone: "#0F6E56",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
     description: "竹叶和远钟慢慢拉开一天的边界。",
   },
   {
@@ -52,6 +54,7 @@ export const SOUNDSCAPES: SoundscapeItem[] = [
     duration: "45 分钟",
     paid: false,
     tone: "#607D8B",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
     description: "稳定低频帮助进入长时间心流。",
   },
   {
@@ -62,7 +65,19 @@ export const SOUNDSCAPES: SoundscapeItem[] = [
     duration: "45 分钟",
     paid: false,
     tone: "#D98A60",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
     description: "雨声、壁炉和翻书声组合成柔和背景。",
+  },
+  {
+    id: "bamboo-mindfulness",
+    name: "竹林正念",
+    tag: "正念混音",
+    category: "混音",
+    duration: "28 分钟",
+    paid: false,
+    tone: "#4F7F73",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    description: "竹叶、颂钵与远钟为呼吸练习留出空间。",
   },
   {
     id: "tea-room",
@@ -72,6 +87,7 @@ export const SOUNDSCAPES: SoundscapeItem[] = [
     duration: "32 分钟",
     paid: true,
     tone: "#8D6E58",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
     description: "水沸、茶盏与微弱木质回响。",
   },
   {
@@ -82,6 +98,7 @@ export const SOUNDSCAPES: SoundscapeItem[] = [
     duration: "30 分钟",
     paid: false,
     tone: "#4F7F73",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
     description: "溪流与山风适合傍晚复位。",
   },
   {
@@ -92,6 +109,7 @@ export const SOUNDSCAPES: SoundscapeItem[] = [
     duration: "60 分钟",
     paid: false,
     tone: "#455A64",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
     description: "低亮度雨声，适合睡前淡出。",
   },
   {
@@ -102,6 +120,7 @@ export const SOUNDSCAPES: SoundscapeItem[] = [
     duration: "24 分钟",
     paid: true,
     tone: "#0F6E56",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
     description: "钟声与鼓点保持很低的存在感。",
   },
   {
@@ -112,6 +131,7 @@ export const SOUNDSCAPES: SoundscapeItem[] = [
     duration: "60 分钟",
     paid: false,
     tone: "#607D8B",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
     description: "均匀白噪音帮助睡前屏蔽环境干扰。",
   },
 ];
@@ -124,6 +144,7 @@ export const FEATURED_SCENE: SoundscapeItem = {
   duration: "28 分钟",
   paid: false,
   tone: "#0F6E56",
+  audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
   description: "低饱和远山与轻风，适合傍晚复位与深呼吸。",
 };
 

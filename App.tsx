@@ -6,6 +6,7 @@ import FocusScreen from "./apps/mobile/app/focus";
 import HomeScreen from "./apps/mobile/app/index";
 import ProfileScreen from "./apps/mobile/app/profile";
 import SoundscapeScreen from "./apps/mobile/app/soundscape";
+import { useSoundscapePlayer } from "./apps/mobile/hooks/use-soundscape-player";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 type TabKey = "home" | "soundscape" | "focus" | "profile";
@@ -61,6 +62,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<TabKey>("home");
   const currentTab = TABS.find((tab) => tab.key === activeTab) ?? TABS[0];
   const ActiveScreen = currentTab.component;
+  useSoundscapePlayer();
 
   return (
     <View style={styles.app}>
